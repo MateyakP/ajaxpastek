@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+ <html>
+	<head>
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<title>AJAX 2 en un</title>
+    <script>
+      $(document).ready(function(){
+        $("button").click(function() {
+          jQuery.getJSON( "https://my.pasteque.coop/6/api.php",
+          {login: "demo6",
+          password:"demo6",
+          p:"CategoriesAPI",
+          action:"getAll"},
+          function(data){
+            for (i=0; i<data.content.length;i++){
+              $("#lol").append("<li>" + data.content[i].label + "</li>");
+            }
+          } );
+          // $.ajax({
+          //   type:"GET",
+          //   url:"https://my.pasteque.coop/6/api.php?login=demo6&password=demo6&p=CategoriesAPI&action=getAll",
+          //   complete: function(r){
+          //   $("#lol").html(r.responseText);
+          //         }
+          //        });
+
+          //rajouter l'id  ( " + data.content[i].id + ")
+          });
+        });
+    </script>
+	</head>
+
+	<body>
+		<div id="lol"></div>
+		<button>Test Ajax</button>
+
+	</body>
+ </html>

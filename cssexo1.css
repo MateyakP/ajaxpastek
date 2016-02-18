@@ -1,0 +1,15 @@
+.bleue{
+  width:200px;
+  height:200px;
+  background-color:blue;
+}
+.sablier{
+  width:1000px;
+  height:300px;
+  border:2px black solid;
+}
+.hitler{
+  height:300px;
+  width:300px;
+  background-image:url(adolf.jpg);
+}
